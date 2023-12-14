@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu</title>
+</head>
+<body>
+
+  <script>
+    // Create elements and apply styles using JavaScript
+    const cevaBtn = document.createElement('input');
+    const menu = document.createElement('div');
+    const dropdown = document.createElement('div');
+    const homeLink = document.createElement('a');
+    const aboutLink = document.createElement('a');
+    const feedbackLink = document.createElement('a');
+
+    cevaBtn.type = 'button';
+    cevaBtn.className = 'ceva';
+    cevaBtn.value = 'Menu';
+
+    menu.className = 'menu';
+
+    dropdown.className = 'dropdown';
+    dropdown.style.display = 'none';
+
+    homeLink.href = '#';
+    homeLink.className = 'item';
+    homeLink.innerText = 'Home';
+
+    aboutLink.href = '#';
+    aboutLink.className = 'item';
+    aboutLink.innerText = 'About';
+
+    feedbackLink.href = '#';
+    feedbackLink.className = 'item';
+    feedbackLink.innerText = 'Feedback';
+
+    const links = [homeLink, aboutLink, feedbackLink];
+
+    links.forEach(link => {
+      link.style.color = 'black';
+      link.style.padding = '15%';
+      link.style.textDecoration = 'none';
+      link.style.display = 'block';
+      link.style.fontFamily = 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif';
+      link.style.fontSize = '14px';
+      link.style.fontStretch = 'condensed';
+    });
+
+    links.forEach(link => {
+      link.addEventListener('mouseenter', function() {
+        link.style.backgroundColor = 'rgb(190, 190, 190)';
+      });
+
+      link.addEventListener('mouseleave', function() {
+        link.style.backgroundColor = '';
+      });
+    });
+
+    // Append elements to the DOM
+    document.body.appendChild(menu);
+    menu.appendChild(cevaBtn);
+    menu.appendChild(dropdown);
+    dropdown.appendChild(homeLink);
+    dropdown.appendChild(aboutLink);
+    dropdown.appendChild(feedbackLink);
+  </script>
+
+</body>
+</html>
