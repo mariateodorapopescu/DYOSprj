@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var appIcons = [];
 
-    for (var i = 0; i < 19; i++) {
+    for (var i = 0; i < 9; i++) {
         var appIcon = document.createElement('div');
         appIcon.style.width = '45px';
         appIcon.style.height = '45px';
@@ -364,4 +364,8 @@ console.log(calculator.substract());
 console.log(calculator.multiply());
 console.log(calculator.divide());
 
-//ypu don't know js -> ghithub book
+fetch("https://jsonplaceholder.typicode.com/users/2") // deci tu dai direct url-ul si tii cont de payload!
+.then(response => response.json()) // nu le mai incapsula atat cu () sau nu le mai incapsula in f multe variabile
+.then(json => console.log("name: " + json.name + "; street:" + json.address.street)) 
+.catch(error => console.log(error));
+
